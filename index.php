@@ -16,6 +16,7 @@ $prova = "Metti il tuo nome e cognome (questo è scritto in \$prova, qui ho usat
 
         <input type="text" placeholder="Scrivi il tuo nome" name="nome">
         <input type="text" placeholder="Scrivi il tuo cognome" name="cognome">
+        <input type="text" placeholder="Scrivi il tuo insulto" name="insulto">
 
         <button type="submit">Invia</button>
 
