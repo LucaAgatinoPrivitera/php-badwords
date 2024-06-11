@@ -4,8 +4,9 @@
 //esempio: http://localhost/pagina?chiave=valore&nome=luca&cognome=lambiase
 $nome = $_GET["nome"];
 $cognome = $_GET["cognome"];
-$nomeCognome = ["nome"] + ["cognome"];
-$nomeCognomeNum = (int)strlen($nome) + (int)strlen($cognome);
+// $nomeCognome = ["nome"] + ["cognome"];
+// $nomeCognomeNum = (int)strlen($nome) + (int)strlen($cognome);
+$nomeCognome= $nome . $cognome;
 //Da chiedere perché non va
 
 
@@ -26,12 +27,14 @@ $insulto = $_GET["insulto"];
 <body style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
 
     <h1>Benvenuto <?php echo $nome . " " . $cognome; ?></h1> <a href="index.php">Non sei tu?</a>
-    <p>Il tuo nome è lungo: <?php echo strlen("$nome"); ?> caratteri</p>
-    <p>Il tuo cognome è lungo: <?php echo strlen("$cognome"); ?> caratteri</p>
-    <p>Insieme invece sono lunghi: <?php echo strlen("$nomeCognomeNum"); ?></p>
-    <!-- Da chiedere è possibile fare l'addizione senza creare una variabile? -->
+    <p>Il tuo nome è lungo: <?php echo strlen($nome); ?> caratteri</p>
+    <p>Il tuo cognome è lungo: <?php echo strlen($cognome); ?> caratteri</p>
+    <p>Insieme invece sono lunghi: <?php echo strlen($nomeCognome); ?> caratteri</p>
+    
+    <!-- <p>Insieme invece sono lunghi: <?php //echo strlen($nome) + strlen($cognome) ?> caratteri</p> -->
+    <!-- Da chiedere è possibile fare l'addizione senza creare una variabile? Si col metodo qua sopra -->
 
-    <p>Il tuo insulto è: <?php echo  str_replace($insulto,'--', '***'); ?></p>
+    <p>Il tuo insulto è: <?php echo  str_replace('ciao','***', $insulto); ?></p>
     <p>Il tuo insulto è lungo: <?php echo strlen("$insulto"); ?> caratteri</p>
     </form>
 
